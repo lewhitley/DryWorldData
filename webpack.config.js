@@ -4,7 +4,6 @@ module.exports = {
   context: __dirname,
   entry: "./dry_world.jsx",
   output: {
-    path: path.join(__dirname),
     filename: "bundle.js"
   },
   module: {

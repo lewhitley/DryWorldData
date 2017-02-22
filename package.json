@@ -2,7 +2,7 @@
   "name": "DryWorldData",
   "version": "1.0.0",
   "description": "bundle install npm install rake db:create rake db:setup",
-  "main": "index.js",
+  "main": "dry_world.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
