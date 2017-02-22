@@ -154,7 +154,7 @@ const states = [{
   }
 ];
 
-class App extends React.Component {
+class Table extends React.Component {
   constructor(props) {
     super(props);
 
@@ -196,4 +196,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Table;

@@ -8,8 +8,8 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   margin-bottom: 1px;
   margin-right: 1px;
   background-color: #00B2A9;
@@ -17,8 +17,5 @@ li {
 }
 
 p {
-  color: #FFFFFF;
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
   text-align: center;
 }
