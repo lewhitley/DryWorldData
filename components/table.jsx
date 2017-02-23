@@ -170,12 +170,12 @@ class Table extends React.Component {
   }
 
   getInfo () {
-    if (this.props.topic === "world" && (this.props.version === "v1" || this.props.version === "v2")) {
+    if (this.props.topic === "world") {
       return this.fetch('https://restcountries.eu/rest/v1/all');
-    } else if (this.props.topic === "national") {
+    } else {
       if (this.props.version === "v1") {
         return states;
-      } else if (this.props.version === "v2") {
+      } else {
         return states;
       }
     }
