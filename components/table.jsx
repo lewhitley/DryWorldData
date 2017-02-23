@@ -1,5 +1,4 @@
 import React from 'react';
-import JSONRequest from 'jsonrequest';
 
 const states = [{
     "name": "Alabama",
@@ -164,7 +163,7 @@ class Table extends React.Component {
 
   fetch (url) {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET",url,false);
+    xhr.open("GET", url, false);
     xhr.send(null);
     return JSON.parse(xhr.responseText);
   }
@@ -173,11 +172,7 @@ class Table extends React.Component {
     if (this.props.topic === "world") {
       return this.fetch('https://restcountries.eu/rest/v1/all');
     } else {
-      if (this.props.version === "v1") {
-        return states;
-      } else {
-        return states;
-      }
+      return states;
     }
   }
 
