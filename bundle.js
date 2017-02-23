@@ -26698,11 +26698,11 @@
 	        null,
 	        _react2.default.createElement(
 	          'ul',
-	          { className: 'index' },
+	          null,
 	          this.getInfo().map(function (info, idx) {
 	            return _react2.default.createElement(
 	              'li',
-	              { className: 'index-item', key: idx },
+	              { key: idx },
 	              _react2.default.createElement(
 	                'p',
 	                null,

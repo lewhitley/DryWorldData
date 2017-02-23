@@ -4,7 +4,6 @@ import states from './state_info';
 class Table extends React.Component {
   constructor(props) {
     super(props);
-
     this.fetch = this.fetch.bind(this);
   }
 
@@ -29,9 +28,9 @@ class Table extends React.Component {
 
     return (
       <div>
-        <ul className='index'>
+        <ul>
           {this.getInfo().map( (info, idx) => (
-              <li className='index-item' key={idx}>
+              <li key={idx}>
                 <p>{ version === "v2" && topic === "national" ? info.capital : info.name }</p>
               </li>
           ))}
