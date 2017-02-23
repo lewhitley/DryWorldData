@@ -21519,7 +21519,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _table = __webpack_require__(235);
+	var _table = __webpack_require__(237);
 	
 	var _table2 = _interopRequireDefault(_table);
 	
@@ -21532,18 +21532,7 @@
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _app2.default },
-	      _react2.default.createElement(_reactRouter.Route, { path: '/v1/topics/national', component: function component() {
-	          return _react2.default.createElement(_table2.default, { version: 'v1', topic: 'national' });
-	        } }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/v2/topics/national', component: function component() {
-	          return _react2.default.createElement(_table2.default, { version: 'v2', topic: 'national' });
-	        } }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/v1/topics/world', component: function component() {
-	          return _react2.default.createElement(_table2.default, { version: 'v1', topic: 'world' });
-	        } }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/v2/topics/world', component: function component() {
-	          return _react2.default.createElement(_table2.default, { version: 'v2', topic: 'world' });
-	        } })
+	      _react2.default.createElement(_reactRouter.Route, { path: ':version/topics/:topic', component: _table2.default })
 	    )
 	  );
 	};
@@ -26640,10 +26629,12 @@
 	exports.default = App;
 
 /***/ },
-/* 235 */
+/* 235 */,
+/* 236 */,
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26655,6 +26646,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _state_info = __webpack_require__(238);
+	
+	var _state_info2 = _interopRequireDefault(_state_info);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26663,6 +26658,77 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var Table = function (_React$Component) {
+	  _inherits(Table, _React$Component);
+	
+	  function Table(props) {
+	    _classCallCheck(this, Table);
+	
+	    var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
+	
+	    _this.fetch = _this.fetch.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Table, [{
+	    key: 'fetch',
+	    value: function fetch(url) {
+	      var xhr = new XMLHttpRequest();
+	      xhr.open("GET", url, false);
+	      xhr.send(null);
+	      return JSON.parse(xhr.responseText);
+	    }
+	  }, {
+	    key: 'getInfo',
+	    value: function getInfo() {
+	      if (this.props.params.topic === "world") {
+	        return this.fetch('https://restcountries.eu/rest/v1/all');
+	      } else {
+	        return _state_info2.default;
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var version = this.props.params.version;
+	      var topic = this.props.params.topic;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'index' },
+	          this.getInfo().map(function (info, idx) {
+	            return _react2.default.createElement(
+	              'li',
+	              { className: 'index-item', key: idx },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                version === "v2" && topic === "national" ? info.capital : info.name
+	              )
+	            );
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Table;
+	}(_react2.default.Component);
+	
+	exports.default = Table;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	var states = [{
 	  "name": "Alabama",
 	  "capital": "Montgomery"
@@ -26815,67 +26881,7 @@
 	  "capital": "Cheyenne"
 	}];
 	
-	var Table = function (_React$Component) {
-	  _inherits(Table, _React$Component);
-	
-	  function Table(props) {
-	    _classCallCheck(this, Table);
-	
-	    var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
-	
-	    _this.getInfo = _this.getInfo.bind(_this);
-	    _this.fetch = _this.fetch.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(Table, [{
-	    key: "fetch",
-	    value: function fetch(url) {
-	      var xhr = new XMLHttpRequest();
-	      xhr.open("GET", url, false);
-	      xhr.send(null);
-	      return JSON.parse(xhr.responseText);
-	    }
-	  }, {
-	    key: "getInfo",
-	    value: function getInfo() {
-	      if (this.props.topic === "world") {
-	        return this.fetch('https://restcountries.eu/rest/v1/all');
-	      } else {
-	        return states;
-	      }
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          "ul",
-	          { className: "index" },
-	          this.getInfo().map(function (info, idx) {
-	            return _react2.default.createElement(
-	              "li",
-	              { className: "index-item", key: idx },
-	              _react2.default.createElement(
-	                "p",
-	                null,
-	                _this2.props.version === "v2" && _this2.props.topic === "national" ? info.capital : info.name
-	              )
-	            );
-	          })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Table;
-	}(_react2.default.Component);
-	
-	exports.default = Table;
+	exports.default = states;
 
 /***/ }
 /******/ ]);
