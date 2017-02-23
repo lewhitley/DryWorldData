@@ -11,9 +11,53 @@ body, a {
   color: #FFFFFF;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
-  padding: 10px 15px;
-  background-color: #00B2A9;
   display: flex;
   justify-content: space-between;
+  padding: 0px 15px;
+  color: #414645;
+  background-color: #CCCCCC;
+}
+
+.dropdown-title {
+  position: relative;
+  padding: 10px 0px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 23px;
+  padding: 0px;
+}
+
+.dropdown li {
+  padding: 5px 10px;
+  width: 121px;
+  background-color: #007c76;
+}
+
+.dropdown-title:hover {
+  color: #007c76;
+}
+
+.dropdown-title:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dt1:hover .d1 {
+  left: -5px;
+}
+
+.dt2:hover .d2 {
+  right: -5px;
+}
+
+.dropdown a:hover {
+  color: #414645;
 }

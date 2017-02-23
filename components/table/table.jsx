@@ -27,10 +27,10 @@ class Table extends React.Component {
     const topic = this.props.params.topic;
 
     return (
-      <div>
-        <ul>
+      <div className="index-wrapper">
+        <ul className="index">
           {this.getInfo().map( (info, idx) => (
-              <li key={idx}>
+              <li className="index-item" key={idx}>
                 <p>{ version === "v2" && topic === "national" ? info.capital : info.name }</p>
               </li>
           ))}

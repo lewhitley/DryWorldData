@@ -26598,24 +26598,58 @@
 	      'header',
 	      null,
 	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/v1/topics/national' },
-	        'States'
+	        'section',
+	        { className: 'dropdown-title dt1' },
+	        'Version 1',
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'dropdown d1' },
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/v1/topics/national' },
+	              'States'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/v1/topics/world' },
+	              'World Countries'
+	            )
+	          )
+	        )
 	      ),
 	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/v2/topics/national' },
-	        'State Capitals'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/v1/topics/world' },
-	        'World Version 1'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/v2/topics/world' },
-	        'World Version 2'
+	        'section',
+	        { className: 'dropdown-title dt2' },
+	        'Version 2',
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'dropdown d2' },
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/v2/topics/national' },
+	              'State Capitals'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/v2/topics/world' },
+	              'World Countries'
+	            )
+	          )
+	        )
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -26695,14 +26729,14 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'index-wrapper' },
 	        _react2.default.createElement(
 	          'ul',
-	          null,
+	          { className: 'index' },
 	          this.getInfo().map(function (info, idx) {
 	            return _react2.default.createElement(
 	              'li',
-	              { key: idx },
+	              { className: 'index-item', key: idx },
 	              _react2.default.createElement(
 	                'p',
 	                null,
