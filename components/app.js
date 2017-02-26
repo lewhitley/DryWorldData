@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const App = ({ children }) => (
   <div>
     <header>
-      <nav className="dropdown-title dt1" onClick="">Version 1
+      <nav className="dropdown-title dt1">Version 1
         <ul className="dropdown d1">
           <li><Link to={'/v1/topics/national'}>States</Link></li>
           <li><Link to={'/v1/topics/world'}>World Countries</Link></li>

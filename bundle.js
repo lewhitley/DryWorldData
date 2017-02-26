@@ -26599,7 +26599,7 @@
 	      null,
 	      _react2.default.createElement(
 	        'nav',
-	        { className: 'dropdown-title dt1', onClick: '' },
+	        { className: 'dropdown-title dt1' },
 	        'Version 1',
 	        _react2.default.createElement(
 	          'ul',
