@@ -21519,7 +21519,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _table = __webpack_require__(237);
+	var _table = __webpack_require__(235);
 	
 	var _table2 = _interopRequireDefault(_table);
 	
@@ -26598,7 +26598,12 @@
 	      'header',
 	      null,
 	      _react2.default.createElement(
-	        'section',
+	        'a',
+	        { className: 'menu-icon' },
+	        'Menu'
+	      ),
+	      _react2.default.createElement(
+	        'nav',
 	        { className: 'dropdown-title dt1' },
 	        'Version 1',
 	        _react2.default.createElement(
@@ -26625,7 +26630,7 @@
 	        )
 	      ),
 	      _react2.default.createElement(
-	        'section',
+	        'nav',
 	        { className: 'dropdown-title dt2' },
 	        'Version 2',
 	        _react2.default.createElement(
@@ -26663,9 +26668,7 @@
 	exports.default = App;
 
 /***/ },
-/* 235 */,
-/* 236 */,
-/* 237 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26680,7 +26683,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _state_info = __webpack_require__(238);
+	var _state_info = __webpack_require__(236);
 	
 	var _state_info2 = _interopRequireDefault(_state_info);
 	
@@ -26755,7 +26758,7 @@
 	exports.default = Table;
 
 /***/ },
-/* 238 */
+/* 236 */
 /***/ function(module, exports) {
 
 	"use strict";

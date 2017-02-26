@@ -45,7 +45,8 @@ header {
   color: #007c76;
 }
 
-.dropdown-title:hover .dropdown {
+.dropdown-title:hover .dropdown,
+.dropdown-title:active .dropdown {
   display: flex;
   flex-direction: column;
 }
@@ -60,4 +61,8 @@ header {
 
 .dropdown a:hover {
   color: #414645;
+}
+
+.menu-icon {
+  display: none;
 }
