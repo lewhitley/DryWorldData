@@ -26598,13 +26598,8 @@
 	      'header',
 	      null,
 	      _react2.default.createElement(
-	        'a',
-	        { className: 'menu-icon' },
-	        'Menu'
-	      ),
-	      _react2.default.createElement(
 	        'nav',
-	        { className: 'dropdown-title dt1' },
+	        { className: 'dropdown-title dt1', onClick: '' },
 	        'Version 1',
 	        _react2.default.createElement(
 	          'ul',

@@ -46,7 +46,8 @@ header {
 }
 
 .dropdown-title:hover .dropdown,
-.dropdown-title:active .dropdown {
+.dropdown-title:active .dropdown,
+.dropdown-title:focus .dropdown {
   display: flex;
   flex-direction: column;
 }
